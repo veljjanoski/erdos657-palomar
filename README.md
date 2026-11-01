@@ -20,9 +20,8 @@ The definitions and the statement in `Challenge.lean` are copied verbatim from
 `a64e959c32c270df4dd0d96d2027481f15750534`), where the statement is stated with `sorry`.
 
 The proof in `Solution.lean` uses the points whose $i$-th coordinate is $0$ or $\sqrt{2^i}$ (our
-choice; we did not find Straus's own construction). The
-squared distance between two of them is a sum of distinct powers of $2$, so it determines the set
-of coordinates where they differ.
+choice; we did not find Straus's own construction). The squared distance between two of them is
+a sum of distinct powers of $2$, so it determines the set of coordinates where they differ.
 
 ## Repository map
 

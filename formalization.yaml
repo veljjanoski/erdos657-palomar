@@ -57,8 +57,9 @@ status:
     Formalized: for every k there is a set of 2^k points in R^k with no isosceles triangle
     (no three distinct points with two equal pairwise distances) that determines at most
     2^k - 1 distinct distances (the case n = 2^k of Straus's observation). Not formalized:
-    Straus's observation for other n <= 2^k; the main question in the plane and its version in
-    R^k for fixed k (both open); the results on the line.
+    other n (erdosproblems.com states the observation for every n <= 2^k, but it fails for
+    n = 3); the main question in the plane and its version in R^k for fixed k (both open); the
+    results on the line.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Classical.choice", "Quot.sound"]
@@ -86,8 +87,8 @@ fidelity:
   divergences: >-
     The statement and definitions are verbatim copies of the formal-conjectures ones. Relative
     to erdosproblems.com, which reports Straus's observation for every n <= 2^k, the statement
-    covers only n = 2^k; the general form cannot hold for n = 3. "No isosceles triangle" is formal-conjectures' IsIsoscelesFree: no three distinct
-    points with two equal pairwise distances, so degenerate (collinear) isosceles triples are
+    covers only n = 2^k; the general form cannot hold for n = 3. "No isosceles triangle" is
+    formal-conjectures' IsIsoscelesFree: no three distinct points with two equal pairwise distances, so degenerate (collinear) isosceles triples are
     excluded too.
 
 review:

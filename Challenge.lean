@@ -3,7 +3,7 @@ module
 public import Mathlib
 
 /-!
-# Erdős Problem 657: Straus's isosceles-free point sets
+# Erdős Problem 657: Straus's observation on isosceles-free point sets
 
 A solved statement about Erdős Problem 657
 ([erdosproblems.com/657](https://www.erdosproblems.com/657)). The definitions, the notation `ℝ^`

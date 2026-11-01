@@ -3,9 +3,10 @@ module
 public import Mathlib
 
 /-!
-# Erdős Problem 657: proof of Straus's construction
+# Erdős Problem 657: proof of Straus's observation (case n = 2^k)
 
-Proof of the statement of `Challenge.lean`. The definitions are repeated verbatim.
+Proof of the statement of `Challenge.lean`. The definitions are repeated verbatim. The sources
+consulted do not record Straus's own construction; this point set is our choice.
 
 For `S ⊆ {0, …, k - 1}` let `pt S` be the point with coordinate `√(2^i)` for `i ∈ S` and `0`
 otherwise. The squared distance between `pt S` and `pt T` is `∑_{i ∈ S ∆ T} 2^i`, so by uniqueness

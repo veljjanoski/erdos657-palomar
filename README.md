@@ -1,4 +1,4 @@
-# Erdős Problem 657: Straus's isosceles-free point sets
+# Erdős Problem 657: Straus's observation on isosceles-free point sets
 
 [![CI](https://github.com/veljjanoski/erdos657-palomar/actions/workflows/ci.yml/badge.svg)](https://github.com/veljjanoski/erdos657-palomar/actions/workflows/ci.yml)
 
@@ -8,8 +8,9 @@ A Lean 4 proof of a solved statement about
 <https://submit.palomar-registry.org/>).
 
 Erdős asked whether $n$ points in the plane with no isosceles triangle must determine at least
-$f(n)n$ distinct distances for some $f(n) \to \infty$. Straus observed that in high dimension
-this fails. The proved statement is:
+$f(n)n$ distinct distances for some $f(n) \to \infty$, and asked the same in $\mathbb{R}^k$ for
+each fixed $k$ (both open). Straus observed that no such bound holds if the dimension may grow
+with $n$. The proved statement, in the form stated in formal-conjectures, is:
 
 - `Erdos657.erdos_657.variants.straus`: for every $k$ there are $2^k$ points in $\mathbb{R}^k$
   with no isosceles triangle that determine at most $2^k - 1$ distinct distances.
@@ -18,7 +19,8 @@ The definitions and the statement in `Challenge.lean` are copied verbatim from
 [formal-conjectures](https://github.com/google-deepmind/formal-conjectures) (commit
 `a64e959c32c270df4dd0d96d2027481f15750534`), where the statement is stated with `sorry`.
 
-The proof in `Solution.lean` uses the points whose $i$-th coordinate is $0$ or $\sqrt{2^i}$. The
+The proof in `Solution.lean` uses the points whose $i$-th coordinate is $0$ or $\sqrt{2^i}$ (our
+choice; we did not find Straus's own construction). The
 squared distance between two of them is a sum of distinct powers of $2$, so it determines the set
 of coordinates where they differ.
 

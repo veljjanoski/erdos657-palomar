@@ -1,0 +1,20 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Erdos657.erdos_657.variants.straus"
+  ],
+  "definition_names": [
+    "distanceSet",
+    "distinctDistances",
+    "Set.Triplewise",
+    "IsIsosceles",
+    "Set.IsIsoscelesFree"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

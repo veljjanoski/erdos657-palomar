@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Erdős Problem 657: Straus's isosceles-free point sets with few distances"
+  description: >-
+    Erdős asked whether a set of n points in the plane with no isosceles triangle must determine
+    at least f(n)n distinct distances for some f(n) tending to infinity, and more generally in
+    R^k. Straus observed that in high dimension this fails: for every k there are 2^k points in
+    R^k with no isosceles triangle that determine at most 2^k - 1 distinct distances. This
+    formalization proves Straus's observation, with the points whose coordinates are 0 or
+    sqrt(2^i).
+  authors:
+    - "Daniel Veljjanoski"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Daniel Veljjanoski"
+
+classification:
+  arxiv: ["math.CO", "math.MG"]
+  msc2020: ["52C10"]
+
+sources:
+  - title: "Erdős Problem 657"
+    type: "web page"
+    location: "https://www.erdosproblems.com/657"
+    relationship: "formalizes"
+    note: >-
+      States Straus's observation: if 2^k >= n there are n points in R^k with no isosceles
+      triangle that determine at most n - 1 distances. The statement here is the case n = 2^k
+      (for n = 3 the bound n - 1 cannot hold). We did not locate Straus's original statement.
+    license: "unknown"
+    author_endorsement: "n/a"
+  - title: "Problems and results on combinatorial number theory"
+    authors:
+      - "Paul Erdős"
+    type: "article"
+    location: "A survey of combinatorial theory (Proc. Internat. Sympos., Colorado State Univ., Fort Collins, Colo., 1971) (1973), 117-138"
+    relationship: "background"
+    note: >-
+      Source of Erdős Problem 657, where Erdős asks the question more generally in R^k.
+    license: "unknown"
+    author_endorsement: "n/a"
+
+related_formalizations:
+  - id: "https://github.com/google-deepmind/formal-conjectures/blob/a64e959c32c270df4dd0d96d2027481f15750534/FormalConjectures/ErdosProblems/657.lean"
+    relationship: "builds-on"
+    note: >-
+      The statement in Challenge.lean is copied verbatim from formal-conjectures (Apache-2.0),
+      where it is stated with sorry. The definitions distanceSet, distinctDistances,
+      Set.Triplewise, IsIsosceles and Set.IsIsoscelesFree and the notation for R^k are copied
+      verbatim from FormalConjecturesForMathlib at the same commit.
+
+status:
+  scope: >-
+    Formalized: for every k there is a set of 2^k points in R^k with no isosceles triangle
+    (no three distinct points with two equal pairwise distances) that determines at most
+    2^k - 1 distinct distances. Not formalized: the main question of Erdős Problem 657 in the
+    plane, which is open.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus 5.5 (Anthropic)"]
+      framework: "Claude Code"
+      tool_setup: >-
+        AI-assisted: a Claude Code agent wrote the Lean proof and the metadata, using lake build
+        and #print axioms; the author chose the target, directed the work and checked the
+        statement and the result.
+      cost:
+        wall_time: "about an hour"
+        spend_usd: "subscription-based"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based"
+  notes: >-
+    The author selected the statement from formal-conjectures, and an AI agent wrote the proof
+    under the author's direction. The statement was not changed.
+
+fidelity:
+  divergences: >-
+    None known. The statement and definitions are verbatim copies of the formal-conjectures
+    ones. "No isosceles triangle" is formal-conjectures' IsIsoscelesFree: no three distinct
+    points with two equal pairwise distances, so degenerate (collinear) isosceles triples are
+    excluded too.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The proof is checked by the Lean kernel; #print axioms gives only propext,
+    Classical.choice and Quot.sound. A script checked that the statement and definitions in
+    Challenge.lean and Solution.lean are identical to the formal-conjectures ones. No human
+    mathematical review of the proof beyond the author's.
+
+alignment:
+  namespace: "Erdos657"
+  statements:
+    - source: "Straus's observation, as stated on erdosproblems.com/657 (case n = 2^k)"
+      lean: "Erdos657.erdos_657.variants.straus"
+      module: "Challenge"
+      status: "proved"
+      note: "2^k points in R^k, no isosceles triangle, at most 2^k - 1 distinct distances."
+
+acknowledgements: >-
+  Mathlib; formal-conjectures for the statement and definitions; erdosproblems.com.
